@@ -7,7 +7,9 @@
         display: block;
       }
     </style>
-    <h2>Hello [[prop1]]!</h2>
+    <p>[[title]]</p>
+    <input type="text" name="" placeholder="[[placeHolder]]" value="{{valueInput::change}}">
+    <button type="button" name="" on-click="_sendInfo" >[[btnTxt]]</button>
   </template>
 
   <script>
@@ -23,11 +25,26 @@
       static get is() { return 'buscar-element'; }
       static get properties() {
         return {
-          prop1: {
+          title: {
             type: String,
-            value: 'buscar-element'
+            value: ''
+          },
+          btnTxt: {
+            type: String,
+            value: ''
+          },
+          placeHolder: {
+            type: String,
+            value: ''
+          },
+          valueInput : {
+            type: String,
+            value: ''
           }
         };
+      }
+      _sendInfo(){
+        this.dispatchEvent(new CustomEvent('buscar',{detail:thihs.valueInput}))
       }
     }
 
