@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="buscar-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * `buscar-element`
+     * elemento con un input y unn boton
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class BuscarElement extends Polymer.Element {
+      static get is() { return 'buscar-element'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'buscar-element'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(BuscarElement.is, BuscarElement);
+  </script>
+</dom-module>
