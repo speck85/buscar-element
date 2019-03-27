@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../paper-button/paper-button.html">
 
 <dom-module id="buscar-element">
   <template>
@@ -9,7 +10,7 @@
     </style>
     <p>[[title]]</p>
     <input type="text" name="" placeholder="[[placeHolder]]" value="{{valueInput::change}}">
-    <button type="button" name="" on-click="_sendInfo" >[[btnTxt]]</button>
+    <paper-button raised class="indigo" on-click="_sendInfo">[[btnTxt]]</paper-button>
   </template>
 
   <script>
@@ -44,7 +45,7 @@
         };
       }
       _sendInfo(){
-        this.dispatchEvent(new CustomEvent('buscar',{detail:thihs.valueInput}))
+        this.dispatchEvent(new CustomEvent('buscar',{detail:this.valueInput}))
       }
     }
 
