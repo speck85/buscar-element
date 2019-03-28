@@ -1,5 +1,6 @@
 <link rel="import" href="../polymer/polymer-element.html">
 <link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-input/paper-input.html">
 
 <dom-module id="buscar-element">
   <template>
@@ -9,7 +10,7 @@
       }
     </style>
     <p>[[title]]</p>
-    <input type="text" name="" placeholder="[[placeHolder]]" value="{{valueInput::change}}">
+    <paper-input type="text" placeholder="[[placeHolder]]" value="{{valueInput::change}}"></paper-input>
     <paper-button raised class="indigo" on-click="_sendInfo">[[btnTxt]]</paper-button>
   </template>
 
